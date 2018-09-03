@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+
+
+
+
+     ">
+    <!--&lt;!&ndash; 把User交给Spring管理&ndash;&gt;-->
+    <!--默认使用无参的构造器-->
+    <bean id = "user" class = "com.ma.spring.demo01.User" scope="singleton" >
+        <!--使用构造器注入属性-->
+        <constructor-arg name="age" value="20"></constructor-arg>
+        <constructor-arg name="name" value="Young"></constructor-arg>
+    </bean>
+    <!--&lt;!&ndash;静态工厂创建对象&ndash;&gt;-->
+    <!--<bean id = "user" class = "com.ma.spring.demo01.UserFactory" factory-method="newInstance">-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;实例工厂创建对象&ndash;&gt;-->
+    <!--<bean id = "userFactory" class="com.ma.spring.demo01.UserFactory"></bean>-->
+    <!--<bean id="user" factory-bean="userFactory" factory-method="newInstance"></bean>-->
+    <!--注入对象-->
+    <!--<bean id="user" class="com.ma.spring.demo01.User">-->
+        <!--<property name="age" value="22"></property>-->
+        <!--<property name="name" value="李四"></property>-->
+    <!--</bean>-->
+    <!--<bean id="orders" class="com.ma.spring.demo01.Orders">-->
+        <!--<property name="user" ref="user"></property >-->
+    <!--</bean>-->
+    <!--&lt;!&ndash;注入Map&ndash;&gt;-->
+    <!--<bean id="user" class="com.ma.spring.demo01.User">-->
+        <!--<property name="age" value="30"></property>-->
+        <!--<property name="name" value="杰克"></property>-->
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="k1" value="v1"/>-->
+                <!--<entry key="k2" value="v2"/>-->
+                <!--<entry key="k3" value="v3"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--注入List-->
+    <!--<bean id="user" class="com.ma.spring.demo01.User">-->
+        <!--<property name="age" value="30"></property>-->
+        <!--<property name="name" value="杰克"></property>-->
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="k1" value="v1"/>-->
+                <!--<entry key="k2" value="v2"/>-->
+                <!--<entry key="k3" value="v3"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!--<property name="hobbies">-->
+
+            <!--<list>-->
+                <!--<value>Java</value>-->
+                <!--<value>Python</value>-->
+                <!--<value>PHP</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--对象的创建交给Spring-->
+    <!--<bean id="userDao" class="com.ma.spring.demo02.UserDao">-->
+
+    <!--</bean>-->
+    <!--&lt;!&ndash;对象的创建交给Spring&ndash;&gt;-->
+    <!--<bean id="userService" class="com.ma.spring.demo02.UserService">-->
+        <!--<property name="userDao" ref="userDao"></property>-->
+    <!--</bean>-->
+
+    <!--&lt;!&ndash;-注解的扫描器&ndash;&gt;-->
+    <!--<context:component-scan base-package="com.ma.spring"/>-->
+</beans>
